@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+    grist:
+        image: gristlabs/grist:latest
+        restart: unless-stopped
+        volumes:
+            - persist:/persist
+        ports:
+            - '8484:8484'
+        env_file: stack.env
+volumes:
+  persist:
